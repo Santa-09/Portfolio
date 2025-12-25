@@ -1,6 +1,7 @@
-<<<<<<< HEAD
-assets/santanu.jpg
-=======
-assets
-santanu.jpg
->>>>>>> 335a14de024265f9857793d0eea7fa0fefd9e1fe
+# Ignore personal profile images
+assets/profile.jpg
+assets/my-photo.jpg
+assets/real-profile.*
+
+# But keep the placeholder
+!assets/profile-placeholder.jpg

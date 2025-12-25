@@ -734,3 +734,40 @@ footer {
         padding: 12px;
     }
 }
+/* Add this to your existing CSS for image fallback styling */
+.profile-img,
+.about-profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: linear-gradient(135deg, rgba(0, 191, 255, 0.1), rgba(30, 144, 255, 0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: transparent;
+    position: relative;
+}
+
+/* Fallback styling when image fails to load */
+.profile-img:before,
+.about-profile-img:before {
+    content: "S";
+    position: absolute;
+    font-size: 120px;
+    font-weight: bold;
+    color: #00bfff;
+    text-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+    opacity: 0.8;
+}
+
+.about-profile-img:before {
+    font-size: 100px;
+}
+
+.profile-image-container,
+.about-image {
+    position: relative;
+}
+
+/* Keep all your existing CSS styles below this point */
+/* ... rest of your CSS remains the same ... */

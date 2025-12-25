@@ -475,3 +475,70 @@ if (profileImg) {
         this.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><rect width="400" height="400" fill="%23000b19"/><text x="200" y="220" font-family="Arial" font-size="120" font-weight="bold" fill="%2300bfff" text-anchor="middle">S</text></svg>';
     };
 }
+// Add this image fallback function at the end of your script.js
+function setupImageFallbacks() {
+    const profileImg = document.getElementById('profileImg');
+    const aboutProfileImg = document.querySelector('.about-profile-img');
+    
+    // Create SVG placeholder for fallback
+    const createSVGPlaceholder = (text) => {
+        return `data:image/svg+xml,${encodeURIComponent(`
+            <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+                <defs>
+                    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#00bfff;stop-opacity:0.1" />
+                        <stop offset="100%" style="stop-color:#1e90ff;stop-opacity:0.1" />
+                    </linearGradient>
+                </defs>
+                <rect width="400" height="400" fill="url(#grad)" />
+                <circle cx="200" cy="200" r="180" fill="none" stroke="#00bfff" stroke-width="3" stroke-opacity="0.3" />
+                <text x="200" y="220" font-family="Arial" font-size="120" font-weight="bold" 
+                      fill="#00bfff" text-anchor="middle" opacity="0.8">${text}</text>
+            </svg>
+        `)}`;
+    };
+    
+    // Set fallback for hero profile image
+    if (profileImg) {
+        profileImg.onerror = function() {
+            this.onerror = null; // Prevent infinite loop
+            this.src = createSVGPlaceholder('S');
+            this.style.objectFit = 'none';
+        };
+        
+        // Pre-check if image exists
+        const testImg = new Image();
+        testImg.src = profileImg.src;
+        testImg.onerror = function() {
+            profileImg.src = createSVGPlaceholder('S');
+            profileImg.style.objectFit = 'none';
+        };
+    }
+    
+    // Set fallback for about profile image
+    if (aboutProfileImg) {
+        aboutProfileImg.onerror = function() {
+            this.onerror = null; // Prevent infinite loop
+            this.src = createSVGPlaceholder('S');
+            this.style.objectFit = 'none';
+            this.style.borderRadius = '20px';
+        };
+        
+        // Pre-check if image exists
+        const testAboutImg = new Image();
+        testAboutImg.src = aboutProfileImg.src;
+        testAboutImg.onerror = function() {
+            aboutProfileImg.src = createSVGPlaceholder('S');
+            aboutProfileImg.style.objectFit = 'none';
+            aboutProfileImg.style.borderRadius = '20px';
+        };
+    }
+}
+
+// Call the function when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    setupImageFallbacks();
+});
+
+// Keep all your existing JavaScript code below this point
+// ... rest of your JavaScript remains the same ...
