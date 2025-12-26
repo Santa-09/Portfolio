@@ -1,12 +1,38 @@
-# Ignore personal profile images
-assets/profile.jpg
-assets/my-photo.jpg
-assets/real-profile.*
+# Dependencies
+node_modules/
+package-lock.json
 
-# But keep the placeholder
+# Environment variables
+.env
+.env.local
+
+# Build outputs
+dist/
+build/
+*.log
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+temp/
+tmp/
+
+# Images (you might want to keep these, but ignore large ones)
+*.jpg
+*.jpeg
+*.png
 !assets/profile-placeholder.jpg
+!assets/cv/*.pdf
+!assets/cv/*.docx
 
-# In .gitignore file
-!assets/cv/santanu-cv.pdf
-!assets/cv/santanu-cv.docx
-!assets/cv/santanu-cv.doc
+# Test files
+__tests__/
+coverage/
