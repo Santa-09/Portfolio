@@ -324,11 +324,11 @@ function simulateDownload(format) {
     // CORRECTED CV file paths - files are in root directory
     const cvFiles = {
         'pdf': {
-            path: 'https://drive.google.com/file/d/1cOKWNfeTJ0yvQ4vx9mpTt1zxgNORFOES/view?usp=sharing',          // CORRECTED: File in root directory
+            path: 'https://drive.google.com/file/d/1cOKWNfeTJ0yvQ4vx9mpTt1zxgNORFOES/view?usp=sharing',// CORRECTED: File in root directory
             filename: 'Santanu-Resume.pdf'
         },
         'doc': {
-            path: 'https://drive.google.com/drive/folders/1T4OHohVvO4Unenrb3l5najnkc0GBYDy2',         // CORRECTED: File in root directory
+            path: 'https://docs.google.com/document/d/1TIBQceHikKI-4D312j-QbIjbkfJcdXA0/edit?usp=sharing&ouid=113258384918181738704&rtpof=true&sd=true',         // CORRECTED: File in root directory
             filename: 'Santanu-Resume.docx'
         }
     };
