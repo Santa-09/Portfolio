@@ -325,11 +325,11 @@ function simulateDownload(format) {
     const cvFiles = {
         'pdf': {
             path: 'assets/cv/Santanu-Resume.pdf',          // UPDATE THIS PATH
-            filename: 'Santanu-Cloud-Architect-Resume.pdf'
+            filename: 'Santanu-Resume.pdf'
         },
         'doc': {
             path: 'assets/cv/Santanu-Resume.docx',         // UPDATE THIS PATH
-            filename: 'Santanu-Cloud-Architect-Resume.docx'
+            filename: 'Santanu-Resume.docx'
         }
     };
     
