@@ -324,11 +324,11 @@ function simulateDownload(format) {
     // CORRECTED CV file paths - files are in root directory
     const cvFiles = {
         'pdf': {
-            path: 'Santanu-Resume.pdf',          // CORRECTED: File in root directory
+            path: 'https://drive.google.com/drive/folders/11E8eQYhIQPGz9I3zGaDzEhafcvwlSP8N',          // CORRECTED: File in root directory
             filename: 'Santanu-Resume.pdf'
         },
         'doc': {
-            path: 'Santanu-Resume.docx',         // CORRECTED: File in root directory
+            path: 'https://drive.google.com/drive/folders/1T4OHohVvO4Unenrb3l5najnkc0GBYDy2',         // CORRECTED: File in root directory
             filename: 'Santanu-Resume.docx'
         }
     };
