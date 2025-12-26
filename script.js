@@ -319,16 +319,16 @@ document.getElementById('downloadCV').addEventListener('click', function (e) {
     });
 });
 
-// ACTUAL CV DOWNLOAD FUNCTION
+// ACTUAL CV DOWNLOAD FUNCTION - FIXED PATHS
 function simulateDownload(format) {
-    // Define CV file paths - UPDATE THESE PATHS TO YOUR ACTUAL CV FILES
+    // CORRECTED CV file paths - files are in root directory
     const cvFiles = {
         'pdf': {
-            path: 'assets/cv/Santanu-Resume.pdf',          // UPDATE THIS PATH
+            path: 'Santanu-Resume.pdf',          // CORRECTED: File in root directory
             filename: 'Santanu-Resume.pdf'
         },
         'doc': {
-            path: 'assets/cv/Santanu-Resume.docx',         // UPDATE THIS PATH
+            path: 'Santanu-Resume.docx',         // CORRECTED: File in root directory
             filename: 'Santanu-Resume.docx'
         }
     };
