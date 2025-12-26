@@ -5,3 +5,8 @@ assets/real-profile.*
 
 # But keep the placeholder
 !assets/profile-placeholder.jpg
+
+# In .gitignore file
+!assets/cv/santanu-cv.pdf
+!assets/cv/santanu-cv.docx
+!assets/cv/santanu-cv.doc
