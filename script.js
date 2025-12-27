@@ -334,7 +334,6 @@ function simulateDownload(format) {
     };
     
     const fileConfig = cvFiles[format];
-    
     if (!fileConfig) {
         alert('Invalid format selected');
         return;
