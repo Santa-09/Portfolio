@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: #0a0a0a;
@@ -49,6 +54,8 @@ nav {
     display: flex;
     list-style: none;
     gap: 40px;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 .nav-links a {
@@ -70,6 +77,8 @@ nav {
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
+    position: relative;
+    z-index: 1100;
 }
 
 .menu-toggle span {
@@ -88,6 +97,7 @@ nav {
     padding-top: 80px;
     position: relative;
     background: radial-gradient(ellipse at top, rgba(0, 191, 255, 0.1), transparent 50%);
+    overflow-x: hidden;
 }
 
 .hero-content {
@@ -99,13 +109,6 @@ nav {
 
 .hero-text {
     max-width: 600px;
-}
-
-.hero-greeting {
-    font-size: 24px;
-    color: #00bfff;
-    margin-bottom: 10px;
-    min-height: 30px;
 }
 
 .hero-title {
@@ -120,6 +123,9 @@ nav {
     border-right: 2px solid #00bfff;
     padding-right: 5px;
     animation: blink 0.7s infinite;
+    display: inline-block;
+    min-width: 12ch;
+    white-space: nowrap;
 }
 
 @keyframes blink {
@@ -244,6 +250,7 @@ nav {
 
 .hero-image {
     position: relative;
+    overflow: hidden;
 }
 
 .profile-container {
@@ -714,6 +721,10 @@ footer {
         width: 250px;
         height: 250px;
     }
+
+    .orbit-icon {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
@@ -768,6 +779,3 @@ footer {
 .about-image {
     position: relative;
 }
-
-/* Keep all your existing CSS styles below this point */
-/* ... rest of your CSS remains the same ... */

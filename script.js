@@ -26,74 +26,38 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Typing animation
-const greetingEl = document.getElementById('greeting');
+// Typing animation (NAME ONLY)
 const typingEl = document.getElementById('typingText');
 
-const greetings = ['Hi', 'Hello', 'Hey'];
-const names = ['Santanu', 'a Cloud Architect'];
-
-let greetingIndex = 0;
+const names = ['Santanu', 'Cloud Architect'];
 let nameIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-let isGreetingPhase = true;
 
 function type() {
-    if (isGreetingPhase) {
-        const currentGreeting = greetings[greetingIndex];
+    const currentText = names[nameIndex];
 
-        if (!isDeleting && charIndex <= currentGreeting.length) {
-            greetingEl.textContent = currentGreeting.substring(0, charIndex);
-            charIndex++;
-            setTimeout(type, 150);
-        } else if (isDeleting && charIndex >= 0) {
-            greetingEl.textContent = currentGreeting.substring(0, charIndex);
-            charIndex--;
-            setTimeout(type, 100);
-        } else if (!isDeleting && charIndex > currentGreeting.length) {
-            setTimeout(() => {
-                isDeleting = true;
-                type();
-            }, 1000);
-        } else if (isDeleting && charIndex < 0) {
-            isDeleting = false;
-            greetingIndex = (greetingIndex + 1) % greetings.length;
-
-            if (greetingIndex === 0) {
-                isGreetingPhase = false;
-                charIndex = 0;
-                greetingEl.textContent = greetings[0] + ',';
-                setTimeout(type, 500);
-            } else {
-                setTimeout(type, 500);
-            }
-        }
-    } else {
-        const currentName = names[nameIndex];
-
-        if (!isDeleting && charIndex <= currentName.length) {
-            typingEl.textContent = currentName.substring(0, charIndex);
-            charIndex++;
-            setTimeout(type, 150);
-        } else if (isDeleting && charIndex >= 0) {
-            typingEl.textContent = currentName.substring(0, charIndex);
-            charIndex--;
-            setTimeout(type, 100);
-        } else if (!isDeleting && charIndex > currentName.length) {
-            setTimeout(() => {
-                isDeleting = true;
-                type();
-            }, 2000);
-        } else if (isDeleting && charIndex < 0) {
-            isDeleting = false;
-            nameIndex = (nameIndex + 1) % names.length;
-            setTimeout(type, 500);
-        }
+    if (!isDeleting && charIndex <= currentText.length) {
+        typingEl.textContent = currentText.substring(0, charIndex);
+        charIndex++;
+        setTimeout(type, 120);
+    } 
+    else if (isDeleting && charIndex >= 0) {
+        typingEl.textContent = currentText.substring(0, charIndex);
+        charIndex--;
+        setTimeout(type, 80);
+    } 
+    else if (!isDeleting && charIndex > currentText.length) {
+        setTimeout(() => isDeleting = true, 1500);
+        setTimeout(type, 1500);
+    } 
+    else if (isDeleting && charIndex < 0) {
+        isDeleting = false;
+        nameIndex = (nameIndex + 1) % names.length;
+        setTimeout(type, 400);
     }
 }
 
-// Start typing animation
 setTimeout(type, 500);
 
 // Enhanced Download CV functionality
@@ -324,11 +288,11 @@ function simulateDownload(format) {
     // CORRECTED CV file paths - files are in root directory
     const cvFiles = {
         'pdf': {
-            path: 'https://drive.google.com/file/d/1cOKWNfeTJ0yvQ4vx9mpTt1zxgNORFOES/view?usp=sharing',// CORRECTED: File in root directory
+            path: 'https://drive.google.com/file/d/1cOKWNfeTJ0yvQ4vx9mpTt1zxgNORFOES/view?usp=sharing',
             filename: 'Santanu-Resume.pdf'
         },
         'doc': {
-            path: 'https://docs.google.com/document/d/1TIBQceHikKI-4D312j-QbIjbkfJcdXA0/edit?usp=sharing&ouid=113258384918181738704&rtpof=true&sd=true',         // CORRECTED: File in root directory
+            path: 'https://docs.google.com/document/d/1TIBQceHikKI-4D312j-QbIjbkfJcdXA0/edit?usp=sharing&ouid=113258384918181738704&rtpof=true&sd=true',
             filename: 'Santanu-Resume.docx'
         }
     };
