@@ -779,3 +779,36 @@ footer {
 .about-image {
     position: relative;
 }
+
+/* Project Button Styles */
+.project-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: rgba(0, 191, 255, 0.1);
+    color: #00bfff;
+    border: 1px solid rgba(0, 191, 255, 0.3);
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.project-btn:hover {
+    background: rgba(0, 191, 255, 0.2);
+    border-color: #00bfff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 191, 255, 0.2);
+}
+
+.project-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.project-btn:hover svg {
+    transform: translateX(3px) translateY(-3px);
+}
