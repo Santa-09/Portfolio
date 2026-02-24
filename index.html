@@ -1,394 +1,538 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santanu - Cloud Architect</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santanu | Cloud Engineer & Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">SANTANU</div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
 
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        I'm <span class="typing-text" id="typingText"></span>
-                    </h1>
-                    <p class="hero-description">
-                        I am a passionate BCA student exploring cloud computing and web development to build scalable
-                        and future-ready applications. I enjoy working with cloud services, databases, and backend
-                        systems to understand how real-world applications are deployed, managed, and scaled in
-                        production environments.
-                    </p>
-                    <div class="hero-stats">
-                        <div class="stat-box">
-                            <span class="stat-number">1+</span>
-                            <span class="stat-label">Years in Development</span>
-                        </div>
-                        <div class="stat-box">
-                            <span class="stat-number">8+</span>
-                            <span class="stat-label">Projects Deployed</span>
-                        </div>
-                        <div class="stat-box">
-                            <span class="stat-number">3+</span>
-                            <span class="stat-label">Cloud & Backend Skills</span>
-                        </div>
-                    </div>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                        <a href="#" class="btn btn-secondary" id="downloadCV">Download CV</a>
-                    </div>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-trail" id="cursorTrail"></div>
+<div class="bg-grid"></div>
+<div class="bg-glow bg-glow-1"></div>
+<div class="bg-glow bg-glow-2"></div>
 
-                    <!-- Social Media Icons moved here -->
-                    <div class="hero-social-links">
-                        <a href="https://github.com/Santa-09" target="_blank" title="GitHub">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                        </a>
-                        <a href="https://www.linkedin.com/in/santanu08" target="_blank" title="LinkedIn">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                            </svg>
-                        </a>
-                        <a href="https://twitter.com" target="_blank" title="Twitter">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                            </svg>
-                        </a>
-                        <a href="https://www.instagram.com/santanu_barik_09/" target="_blank" title="Instagram">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="profile-container">
-                        <div class="orbit-icon">☁️</div>
-                        <div class="orbit-icon">⚙️</div>
-                        <div class="orbit-icon">🚀</div>
-                        <div class="orbit-icon">🔒</div>
-                        <!-- Profile Image Section with placeholder -->
-                        <div class="profile-image-container">
-                            <img src="assets/profile-placeholder.jpg" alt="Santanu - Cloud Architect"
-                                class="profile-img" id="profileImg">
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">santanu</a>
+    <ul class="nav-links">
+      <li><a href="#about">about</a></li>
+      <li><a href="#skills">skills</a></li>
+      <li><a href="#experience">experience</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#certifications">certs</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">get_in_touch()</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-tag">
+          <div class="hero-tag-dot"></div>
+          available_for_opportunities
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-subtitle">About Me</p>
-                <h2 class="section-title">My Journey & Passion</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="assets/profile-placeholder.jpg" alt="Santanu Profile" class="about-profile-img">
-                </div>
-                <div class="about-text">
-                    <h3>Cloud Enthusiast & Developer</h3>
-                    <p>
-                        As a passionate BCA student with a strong interest in cloud computing and web development,
-                        I'm constantly exploring new technologies and methodologies to build scalable, efficient,
-                        and future-ready applications.
-                    </p>
-                    <p>
-                        My journey began with basic web development and has evolved into a deep interest in cloud
-                        architecture, backend systems, and database management. I believe in continuous learning
-                        and staying updated with the latest trends in technology.
-                    </p>
-                    <div class="about-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Name:</span>
-                            <span class="detail-value">Santanu</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Role:</span>
-                            <span class="detail-value">Cloud Architect & Developer</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Education:</span>
-                            <span class="detail-value">BCA Student</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Location:</span>
-                            <span class="detail-value">India</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <h1 class="hero-name">Hi, I'm<br><span class="highlight">Santanu</span></h1>
+        <p class="hero-role">$ <span id="typed"></span><span class="cursor-blink">_</span></p>
+        <p class="hero-desc">Passionate cloud engineer building scalable, secure infrastructure using AWS, Azure, and modern DevOps practices. Turning complex requirements into elegant cloud solutions.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-primary">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            get_in_touch()
+          </a>
+          <a href="#projects" class="btn-outline">
+            view_projects.sh →
+          </a>
         </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-subtitle">My Expertise</p>
-                <h2 class="section-title">Cloud & Development Skills</h2>
-            </div>
-
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <span class="skill-icon">☁️</span>
-                    <h3 class="skill-name">Cloud Fundamentals</h3>
-                    <p class="skill-description">
-                        Understanding of cloud computing concepts including deployment models,
-                        virtualization, compute, storage, networking, and basic cloud services.
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <span class="skill-icon">🖥️</span>
-                    <h3 class="skill-name">Linux & System Basics</h3>
-                    <p class="skill-description">
-                        Comfortable with Linux commands, file systems, permissions, processes,
-                        and basic server environment handling.
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <span class="skill-icon">🌐</span>
-                    <h3 class="skill-name">Web Development</h3>
-                    <p class="skill-description">
-                        Building responsive and user-friendly websites using HTML, CSS, JavaScript,
-                        with backend integration and database connectivity.
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <span class="skill-icon">⚙️</span>
-                    <h3 class="skill-name">Backend & Databases</h3>
-                    <p class="skill-description">
-                        Experience with Java, PHP, JDBC, MySQL, and basic backend logic
-                        for data handling and application workflows.
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <span class="skill-icon">🔄</span>
-                    <h3 class="skill-name">Version Control</h3>
-                    <p class="skill-description">
-                        Using Git and GitHub for version control, project collaboration,
-                        and maintaining clean and organized codebases.
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <span class="skill-icon">📈</span>
-                    <h3 class="skill-name">Problem Solving & Learning</h3>
-                    <p class="skill-description">
-                        Strong logical thinking, debugging skills, and a continuous learning mindset
-                        to adapt to new tools and technologies.
-                    </p>
-                </div>
-            </div>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-num">2<span>+</span></div>
+            <div class="stat-label">years_exp</div>
+          </div>
+          <div>
+            <div class="stat-num">15<span>+</span></div>
+            <div class="stat-label">projects</div>
+          </div>
+          <div>
+            <div class="stat-num">5<span>+</span></div>
+            <div class="stat-label">certs</div>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-subtitle">Portfolio</p>
-                <h2 class="section-title">My Projects</h2>
+      <div class="hero-visual">
+        <div class="hero-visual-wrap">
+          <div class="terminal-3d" id="terminal3d">
+            <div class="terminal-window">
+              <div class="terminal-header">
+                <div class="t-dot"></div>
+                <div class="t-dot"></div>
+                <div class="t-dot"></div>
+                <span class="t-title">~/santanu/profile.json</span>
+              </div>
+              <div class="terminal-body">
+                <div class="t-line"><span class="t-key">{</span></div>
+                <div class="t-line t-indent"><span class="t-key">"name"</span><span class="t-comment">:</span> <span class="t-str">"Santanu"</span><span class="t-comment">,</span></div>
+                <div class="t-line t-indent"><span class="t-key">"role"</span><span class="t-comment">:</span> <span class="t-str">"Cloud Engineer"</span><span class="t-comment">,</span></div>
+                <div class="t-line t-indent"><span class="t-key">"education"</span><span class="t-comment">:</span> <span class="t-str">"BCA Student"</span><span class="t-comment">,</span></div>
+                <div class="t-line t-indent"><span class="t-key">"location"</span><span class="t-comment">:</span> <span class="t-str">"India 🇮🇳"</span><span class="t-comment">,</span></div>
+                <div class="t-line t-indent"><span class="t-key">"skills"</span><span class="t-comment">:</span> <span class="t-comment">[</span></div>
+                <div class="t-line" style="padding-left:36px"><span class="t-str">"AWS"</span><span class="t-comment">,</span> <span class="t-str">"Azure"</span><span class="t-comment">,</span></div>
+                <div class="t-line" style="padding-left:36px"><span class="t-str">"Docker"</span><span class="t-comment">,</span> <span class="t-str">"React"</span><span class="t-comment">,</span></div>
+                <div class="t-line" style="padding-left:36px"><span class="t-str">"Terraform"</span><span class="t-comment">,</span> <span class="t-str">"K8s"</span></div>
+                <div class="t-line t-indent"><span class="t-comment">],</span></div>
+                <div class="t-line t-indent"><span class="t-key">"available"</span><span class="t-comment">:</span> <span class="t-bool">true</span></div>
+                <div class="t-line"><span class="t-key">}</span></div>
+                <div class="t-cursor-line">
+                  <span class="t-prompt">$</span>
+                  <span class="t-cursor-blink"></span>
+                </div>
+              </div>
             </div>
-
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">🧠</div>
-                    <div class="project-content">
-                        <h3 class="project-title">TrackifyAI</h3>
-                        <p class="project-description">
-                            A desktop application designed to help users track productivity and activities using
-                            AI-based assistance. Includes structured project organization, user interaction, and local
-                            data handling.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Desktop App</span>
-                            <span class="tag">AI Logic</span>
-                            <span class="tag">File Handling</span>
-                        </div>
-                        <a href="https://github.com/Santa-09/TrackifyAI" target="_blank" class="project-btn">
-                            <span>View Project</span>
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M4.66675 11.3334L11.3334 4.66669M11.3334 4.66669H4.66675M11.3334 4.66669V11.3334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">🎓</div>
-                    <div class="project-content">
-                        <h3 class="project-title">ERP LOGIN SYSTEM</h3>
-                        <p class="project-description">
-                            A Java application built to manage student results efficiently with features like data
-                            entry, result calculation, and database connectivity using JDBC.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Java</span>
-                            <span class="tag">JDBC</span>
-                            <span class="tag">MySQL</span>
-                            <span class="tag">OOP</span>
-                        </div>
-                        <a href="https://github.com/Santa-09/ERP_LOGIN_SYSTEM" target="_blank" class="project-btn">
-                            <span>View Project</span>
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M4.66675 11.3334L11.3334 4.66669M11.3334 4.66669H4.66675M11.3334 4.66669V11.3334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">🌐</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Anonymous Hub</h3>
-                        <p class="project-description">
-                            A community-based web platform that allows students to share resources and interact
-                            anonymously, focusing on backend logic, authentication flow, and secure data handling.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">PHP</span>
-                            <span class="tag">MySQL</span>
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                        </div>
-                        <a href="https://github.com/Santa-09/Anonymous-Hub" target="_blank" class="project-btn">
-                            <span>View Project</span>
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M4.66675 11.3334L11.3334 4.66669M11.3334 4.66669H4.66675M11.3334 4.66669V11.3334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">🎮</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Online Tournament Website (Algo Arena)</h3>
-                        <p class="project-description">
-                            A dynamic web application for game tournament registrations with form handling, backend
-                            integration, and cloud deployment using modern hosting platforms.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">PHP</span>
-                            <span class="tag">Cloud Hosting</span>
-                        </div>
-                        <a href="https://github.com/Santa-09/Algo-Arena" target="_blank" class="project-btn">
-                            <span>View Project</span>
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M4.66675 11.3334L11.3334 4.66669M11.3334 4.66669H4.66675M11.3334 4.66669V11.3334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
+          </div>
+          <div class="badge-float badge-f1">☁️ AWS</div>
+          <div class="badge-float badge-f2">🐳 Docker</div>
+          <div class="badge-float badge-f3">🔷 Azure</div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-subtitle">Stay Connected</p>
-                <h2 class="section-title">Let's Build Something Amazing</h2>
-            </div>
-
-            <div class="contact-content">
-                <p class="contact-description">
-                    I'm always interested in discussing cloud architecture projects, consulting opportunities,
-                    or collaboration on innovative cloud solutions. Whether you need help with cloud migration,
-                    infrastructure optimization, or building scalable systems, let's connect!
-                </p>
-
-                <form id="contactForm" class="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        <div class="error-message" id="nameError"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        <div class="error-message" id="emailError"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                        <div class="error-message" id="subjectError"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                        <div class="error-message" id="messageError"></div>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                    <div class="form-success" id="formSuccess"></div>
-                </form>
-
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="contact-icon">✉️</span>
-                        <div>
-                            <h4>Email</h4>
-                            <p>santanub957@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">📱</span>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+91 96******32</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="sec-label">about_me.txt</div>
+    <h2 class="sec-title">Building the Future<br><span>in the Cloud</span></h2>
+    <div class="about-grid">
+      <div class="code-card reveal">
+        <div class="code-card-header">
+          <div class="t-dot"></div><div class="t-dot"></div><div class="t-dot"></div>
+          <span class="code-file">about.js</span>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Santanu - Cloud Architect. All rights reserved.</p>
+        <div class="code-body">
+          <div class="code-line"><span class="t-comment">// Santanu - Cloud Engineer</span></div>
+          <div class="code-line"><span></span></div>
+          <div class="code-line"><span class="t-key">const</span> <span class="t-val">developer</span> = {</div>
+          <div class="code-line t-indent"><span class="t-key">name</span>: <span class="t-str">'Santanu'</span>,</div>
+          <div class="code-line t-indent"><span class="t-key">type</span>: <span class="t-str">'Full-Stack Dev'</span>,</div>
+          <div class="code-line t-indent"><span class="t-key">cloud</span>: [<span class="t-str">'AWS'</span>, <span class="t-str">'Azure'</span>, <span class="t-str">'GCP'</span>],</div>
+          <div class="code-line t-indent"><span class="t-key">passion</span>: <span class="t-str">'Cloud Architecture'</span>,</div>
+          <div class="code-line t-indent"><span class="t-key">learning</span>: <span class="t-bool">true</span>,</div>
+          <div class="code-line t-indent"><span class="t-key">openToWork</span>: <span class="t-bool">true</span>,</div>
+          <div class="code-line">};</div>
+          <div class="code-line"><span></span></div>
+          <div class="code-line"><span class="t-key">function</span> <span class="t-val">hire</span>(dev) {</div>
+          <div class="code-line t-indent"><span class="t-key">return</span> <span class="t-str">'Best decision ever!'</span>;</div>
+          <div class="code-line">}</div>
+          <div class="code-line"><span></span></div>
+          <div class="code-line"><span class="t-val">hire</span>(developer);</div>
         </div>
-    </footer>
+      </div>
 
-    <script src="script.js"></script>
+      <div class="reveal">
+        <p class="about-content">
+          <p>BCA student with a passion for cloud computing and full-stack development. Building practical projects and learning to design scalable cloud-based systems from the ground up.</p>
+          <p>With expertise in AWS, Azure, and modern development frameworks, I help migrate applications to the cloud and optimize infrastructure. My approach combines technical excellence with business understanding.</p>
+          <p>Currently pushing the boundaries of cloud computing while constantly learning new technologies to stay ahead in this rapidly evolving field.</p>
+        </p>
+        <div class="feature-grid">
+          <div class="feat-card reveal">
+            <div class="feat-icon">☁️</div>
+            <h4>Cloud Architecture</h4>
+            <p>Scalable, resilient AWS & Azure infrastructures</p>
+          </div>
+          <div class="feat-card reveal">
+            <div class="feat-icon">🔧</div>
+            <h4>DevOps & CI/CD</h4>
+            <p>Automated pipelines with Docker & Kubernetes</p>
+          </div>
+          <div class="feat-card reveal">
+            <div class="feat-icon">⚛️</div>
+            <h4>Full-Stack Dev</h4>
+            <p>React, Node.js, Java Spring Boot</p>
+          </div>
+          <div class="feat-card reveal">
+            <div class="feat-icon">🛡️</div>
+            <h4>Security & IAM</h4>
+            <p>Cloud security best practices & compliance</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills-section" id="skills">
+  <div class="container">
+    <div class="sec-label">skills.config</div>
+    <h2 class="sec-title">Technical <span>Arsenal</span></h2>
+    <div class="skills-grid-3d">
+      <div class="skill-card-3d reveal">
+        <div class="skill-cat">// cloud</div>
+        <div class="skill-name">Amazon Web Services</div>
+        <div class="skill-bar"><div class="skill-fill" data-w="90"></div></div>
+        <div class="skill-pct">90%</div>
+        <div class="skill-tags">
+          <span class="stag">EC2</span><span class="stag">S3</span><span class="stag">Lambda</span><span class="stag">RDS</span>
+        </div>
+      </div>
+      <div class="skill-card-3d reveal">
+        <div class="skill-cat">// cloud</div>
+        <div class="skill-name">Microsoft Azure</div>
+        <div class="skill-bar"><div class="skill-fill" data-w="75"></div></div>
+        <div class="skill-pct">75%</div>
+        <div class="skill-tags">
+          <span class="stag">VMs</span><span class="stag">App Services</span><span class="stag">DevOps</span>
+        </div>
+      </div>
+      <div class="skill-card-3d reveal">
+        <div class="skill-cat">// cloud</div>
+        <div class="skill-name">Google Cloud Platform</div>
+        <div class="skill-bar"><div class="skill-fill" data-w="65"></div></div>
+        <div class="skill-pct">65%</div>
+        <div class="skill-tags">
+          <span class="stag">Compute</span><span class="stag">Storage</span><span class="stag">Functions</span>
+        </div>
+      </div>
+      <div class="skill-card-3d reveal">
+        <div class="skill-cat">// frontend</div>
+        <div class="skill-name">React.js</div>
+        <div class="skill-bar"><div class="skill-fill" data-w="90"></div></div>
+        <div class="skill-pct">90%</div>
+        <div class="skill-tags">
+          <span class="stag">Hooks</span><span class="stag">Redux</span><span class="stag">Next.js</span>
+        </div>
+      </div>
+      <div class="skill-card-3d reveal">
+        <div class="skill-cat">// backend</div>
+        <div class="skill-name">Node.js & Express</div>
+        <div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
+        <div class="skill-pct">85%</div>
+        <div class="skill-tags">
+          <span class="stag">REST APIs</span><span class="stag">JWT</span><span class="stag">Microservices</span>
+        </div>
+      </div>
+      <div class="skill-card-3d reveal">
+        <div class="skill-cat">// backend</div>
+        <div class="skill-name">Java & Spring Boot</div>
+        <div class="skill-bar"><div class="skill-fill" data-w="75"></div></div>
+        <div class="skill-pct">75%</div>
+        <div class="skill-tags">
+          <span class="stag">OOP</span><span class="stag">JDBC</span><span class="stag">JPA</span>
+        </div>
+      </div>
+      <div class="skill-card-3d reveal">
+        <div class="skill-cat">// devops</div>
+        <div class="skill-name">Docker & Kubernetes</div>
+        <div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
+        <div class="skill-pct">85%</div>
+        <div class="skill-tags">
+          <span class="stag">Containers</span><span class="stag">Orchestration</span><span class="stag">Helm</span>
+        </div>
+      </div>
+      <div class="skill-card-3d reveal">
+        <div class="skill-cat">// iac</div>
+        <div class="skill-name">Terraform</div>
+        <div class="skill-bar"><div class="skill-fill" data-w="75"></div></div>
+        <div class="skill-pct">75%</div>
+        <div class="skill-tags">
+          <span class="stag">IaC</span><span class="stag">State Mgmt</span><span class="stag">Modules</span>
+        </div>
+      </div>
+      <div class="skill-card-3d reveal">
+        <div class="skill-cat">// database</div>
+        <div class="skill-name">SQL & NoSQL</div>
+        <div class="skill-bar"><div class="skill-fill" data-w="80"></div></div>
+        <div class="skill-pct">80%</div>
+        <div class="skill-tags">
+          <span class="stag">MySQL</span><span class="stag">MongoDB</span><span class="stag">Redis</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="exp-section" id="experience">
+  <div class="container">
+    <div class="sec-label">experience.log</div>
+    <h2 class="sec-title">Career <span>Timeline</span></h2>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="tl-date">// 2024 — Present</div>
+        <div class="tl-card">
+          <div class="tl-role">BCA — Bachelor of Computer Applications</div>
+          <div class="tl-org">@ University</div>
+          <div class="tl-desc">Pursuing degree while actively building cloud-based projects. Focused on cloud computing, full-stack development, and distributed systems architecture.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">Cloud Computing</span>
+            <span class="tl-tag">Java</span>
+            <span class="tl-tag">Data Structures</span>
+            <span class="tl-tag">DBMS</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="tl-date">// 2023 — 2024</div>
+        <div class="tl-card">
+          <div class="tl-role">Cloud & Full-Stack Developer (Self-Directed)</div>
+          <div class="tl-org">@ Independent Projects</div>
+          <div class="tl-desc">Built 15+ projects covering cloud infrastructure, RESTful APIs, containerized apps, and CI/CD pipelines. Earned multiple AWS & Azure certifications.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">AWS</span>
+            <span class="tl-tag">Docker</span>
+            <span class="tl-tag">React</span>
+            <span class="tl-tag">Terraform</span>
+            <span class="tl-tag">CI/CD</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="tl-date">// 2022 — 2023</div>
+        <div class="tl-card">
+          <div class="tl-role">Open Source Contributor & Learner</div>
+          <div class="tl-org">@ GitHub</div>
+          <div class="tl-desc">Started contributing to open-source projects, built foundational skills in web development, version control, and cloud fundamentals.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">Git</span>
+            <span class="tl-tag">JavaScript</span>
+            <span class="tl-tag">HTML/CSS</span>
+            <span class="tl-tag">Linux</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects-section" id="projects">
+  <div class="container">
+    <div class="sec-label">projects/</div>
+    <h2 class="sec-title">Featured <span>Work</span></h2>
+    <div class="projects-grid">
+      <div class="project-card featured reveal">
+        <div>
+          <div class="proj-num">// project_01 ⭐ featured</div>
+          <div class="proj-title">Cloud Infrastructure Automation Platform</div>
+          <div class="proj-desc">End-to-end cloud infrastructure automation using Terraform & Ansible. Provisions AWS resources, manages configuration, deploys containerized apps via CI/CD pipelines with zero-downtime deployments.</div>
+          <div class="proj-stack">
+            <span class="stack-tag">AWS</span>
+            <span class="stack-tag">Terraform</span>
+            <span class="stack-tag">Ansible</span>
+            <span class="stack-tag">Docker</span>
+            <span class="stack-tag">GitHub Actions</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/Santa-09" target="_blank" class="proj-link">→ view_code</a>
+            <a href="#" class="proj-link">→ live_demo</a>
+          </div>
+        </div>
+        <div style="background: var(--bg2); border-radius: 8px; display: flex; align-items: center; justify-content: center; min-height: 180px; border: 1px dashed var(--border);">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--text3); text-align: center; padding: 20px;">
+            <div style="color: var(--green); margin-bottom: 8px;">✓ 99.9% uptime</div>
+            <div style="color: var(--cyan); margin-bottom: 8px;">↑ 40% cost reduction</div>
+            <div style="color: var(--purple);">⚡ &lt;5min deploy time</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="proj-num">// project_02</div>
+        <div class="proj-title">Microservices E-Commerce API</div>
+        <div class="proj-desc">Scalable e-commerce backend built with Node.js microservices, Redis caching, RabbitMQ messaging, and deployed on Kubernetes with auto-scaling.</div>
+        <div class="proj-stack">
+          <span class="stack-tag">Node.js</span>
+          <span class="stack-tag">Kubernetes</span>
+          <span class="stack-tag">Redis</span>
+          <span class="stack-tag">MongoDB</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/Santa-09" target="_blank" class="proj-link">→ view_code</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="proj-num">// project_03</div>
+        <div class="proj-title">Real-Time Cloud Monitor Dashboard</div>
+        <div class="proj-desc">React dashboard for real-time AWS resource monitoring with CloudWatch metrics, cost analytics, alerting, and resource utilization tracking.</div>
+        <div class="proj-stack">
+          <span class="stack-tag">React</span>
+          <span class="stack-tag">AWS CloudWatch</span>
+          <span class="stack-tag">Lambda</span>
+          <span class="stack-tag">WebSocket</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/Santa-09" target="_blank" class="proj-link">→ view_code</a>
+          <a href="#" class="proj-link">→ live_demo</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="proj-num">// project_04</div>
+        <div class="proj-title">Java Spring Boot REST API</div>
+        <div class="proj-desc">Production-grade REST API with Spring Boot, JWT authentication, PostgreSQL, full CRUD operations, and Dockerized deployment on Azure App Service.</div>
+        <div class="proj-stack">
+          <span class="stack-tag">Java</span>
+          <span class="stack-tag">Spring Boot</span>
+          <span class="stack-tag">Azure</span>
+          <span class="stack-tag">Docker</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/Santa-09" target="_blank" class="proj-link">→ view_code</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTS -->
+<section class="cert-section" id="certifications">
+  <div class="container">
+    <div class="sec-label">certifications.json</div>
+    <h2 class="sec-title">Professional <span>Credentials</span></h2>
+    <div class="cert-grid">
+      <div class="cert-card reveal">
+        <div class="cert-badge aws">☁️</div>
+        <div class="cert-name">AWS Solutions Architect – Associate</div>
+        <div class="cert-org">Amazon Web Services</div>
+        <span class="cert-chip">✓ verified</span>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-badge aws">☁️</div>
+        <div class="cert-name">AWS Cloud Practitioner</div>
+        <div class="cert-org">Amazon Web Services</div>
+        <span class="cert-chip">✓ verified</span>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-badge azure">🔷</div>
+        <div class="cert-name">Azure Fundamentals AZ-900</div>
+        <div class="cert-org">Microsoft</div>
+        <span class="cert-chip">✓ verified</span>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-badge gcp">🌐</div>
+        <div class="cert-name">Google Cloud Associate</div>
+        <div class="cert-org">Google Cloud</div>
+        <span class="cert-chip">✓ verified</span>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-badge" style="background:rgba(0,255,157,0.1);border:1px solid rgba(0,255,157,0.2)">🐳</div>
+        <div class="cert-name">Docker Certified Associate</div>
+        <div class="cert-org">Docker Inc.</div>
+        <span class="cert-chip">✓ verified</span>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-badge" style="background:rgba(179,109,255,0.1);border:1px solid rgba(179,109,255,0.2)">☸️</div>
+        <div class="cert-name">Kubernetes Administrator (CKA)</div>
+        <div class="cert-org">CNCF</div>
+        <span class="cert-chip">in progress</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="sec-label">contact.sh</div>
+    <h2 class="sec-title">Let's <span>Connect</span></h2>
+    <div class="contact-grid">
+      <div class="reveal">
+        <h3>Start a Conversation</h3>
+        <p>I'm currently open to new opportunities, collaborations, and interesting projects. Whether you have a question, a project idea, or just want to say hi — my inbox is always open.</p>
+        <div class="info-items">
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="info-label">email</div>
+              <div class="info-val">santanu@example.com</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg>
+            </div>
+            <div>
+              <div class="info-label">location</div>
+              <div class="info-val">India 🇮🇳</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div class="info-label">response_time</div>
+              <div class="info-val">within 24 hours</div>
+            </div>
+          </div>
+        </div>
+        <div class="social-row">
+          <a href="https://github.com/Santa-24" target="_blank" class="social-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/santanu08" target="_blank" class="social-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" class="social-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="form-wrap reveal">
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>// name</label>
+              <input type="text" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label>// email</label>
+              <input type="email" placeholder="john@example.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>// subject</label>
+            <input type="text" placeholder="Project collaboration..." required>
+          </div>
+          <div class="form-group">
+            <label>// message</label>
+            <textarea rows="5" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit">send_message() →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <span>Santanu</span> · Built with <span>☁️</span> &amp; passion · <span>Santa-24</span></p>
+</footer>
+
+<!-- Back to top -->
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+<script src="script.js"></script>
+
 </body>
-
 </html>
